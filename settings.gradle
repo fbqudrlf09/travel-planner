@@ -1,0 +1,3 @@
+rootProject.name = 'travel_planner'
+include 'module_planner'
+
