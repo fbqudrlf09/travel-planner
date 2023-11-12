@@ -2,6 +2,8 @@ package member;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class Member {
 
@@ -12,4 +14,6 @@ public class Member {
     private String password;
 
     private String name;
+
+    private List<Long> boardList;
 }
