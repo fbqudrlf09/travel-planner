@@ -1,21 +1,18 @@
-package controller;
+package org.travelPlanner.controller;
 
-import board.Board;
-import org.springframework.http.HttpStatus;
-import org.springframework.ui.Model;
+import org.travelPlanner.model.Board;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/boards")
-public class TravelBoardController {
+public class BoardController {
 
     // 여행 보드 리스트
-    @GetMapping()
-    public List<Board> viewBoards() {
+    @GetMapping
+    public List<Board> getBoards() {
 
         List<Board> boards = new ArrayList<>();
 
@@ -23,17 +20,19 @@ public class TravelBoardController {
     }
 
     // 새로운 여행 보드 추가
-    @PostMapping()
-    public String addNewBoard(@RequestBody Board board) {
+    @PostMapping
+    public Board postBoard(@RequestBody Board board) {
 
         // 기존 리스트에 보드 추가
+        Board newBoard = board;
 
-        return "ok";
+
+        return newBoard;
     }
 
     // 해당 id의 여행 보드 검색
     @GetMapping("/{boarId}")
-    public Board viewBoard(@PathVariable Long boardId) {
+    public Board getBoard(@PathVariable Long boardId) {
 
         //boardId를 통해 boardList에서 Board 반환
         Board board = new Board();
@@ -43,7 +42,7 @@ public class TravelBoardController {
 
     // 해당 id의 여행 보드 수정 요청
     @PutMapping("/{boardId}")
-    public void updateBoard(@PathVariable Long itemId, @RequestBody Board board) {
+    public void putBoard(@PathVariable Long itemId, @RequestBody Board board) {
 
         // boardList에서 boardId검색 후 업데이트
         return;
@@ -53,6 +52,7 @@ public class TravelBoardController {
     @DeleteMapping("/{boardId}")
     public void deleteBoard(@PathVariable Long itemId) {
         //boardList에서 boardId 검색 후 삭제
+
 
         return;
     }

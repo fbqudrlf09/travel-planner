@@ -1,6 +1,6 @@
-package controller;
+package org.travelPlanner.controller;
 
-import member.Member;
+import org.travelPlanner.model.Member;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class MemberController {
 
     //모든 고객 검색
     @GetMapping
-    public List<Member> findAllMember() {
+    public List<Member> getMembers() {
 
         List<Member> members = new ArrayList<>();
 
@@ -20,7 +20,7 @@ public class MemberController {
     }
 
     @PostMapping
-    public void addNewMember(@RequestBody Member member) {
+    public void postMembers(@RequestBody Member member) {
 
         //리스트에 새로운 맴버 추가
 
@@ -28,7 +28,7 @@ public class MemberController {
     }
 
     @GetMapping("/{memberId}")
-    public Member findMember(@PathVariable Long memberId) {
+    public Member getMember(@PathVariable Long memberId) {
         //리스트에서 해당 멤버 찾기
         Member member = new Member();
 
@@ -36,7 +36,7 @@ public class MemberController {
     }
 
     @PutMapping("/{memberId}")
-    public void updateMember(@PathVariable Long memberId, Member member) {
+    public void putMember(@PathVariable Long memberId, Member member) {
         //리스트에서 해당 맴버 업데이트
 
         return;

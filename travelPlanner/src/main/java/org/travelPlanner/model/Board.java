@@ -1,6 +1,8 @@
-package board;
+package org.travelPlanner.model;
 
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class Board {
@@ -13,5 +15,5 @@ public class Board {
 
     private String boardName;
 
-    private String[] context;
+    private List<String> context;
 }

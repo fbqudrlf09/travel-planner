@@ -1,4 +1,4 @@
-package member;
+package org.travelPlanner.model;
 
 import lombok.Data;
 
