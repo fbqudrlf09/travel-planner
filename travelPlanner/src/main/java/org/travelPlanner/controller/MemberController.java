@@ -20,25 +20,27 @@ public class MemberController {
     }
 
     @PostMapping
-    public void postMembers(@RequestBody Member member) {
+    public Member postMembers(@RequestBody Member member) {
 
         //리스트에 새로운 맴버 추가
 
-        return;
+        return member;
     }
 
     @GetMapping("/{memberId}")
     public Member getMember(@PathVariable Long memberId) {
         //리스트에서 해당 멤버 찾기
         Member member = new Member();
+        member.setId(1L);
+        member.setName("Test1");
 
         return member;
     }
 
     @PutMapping("/{memberId}")
-    public void putMember(@PathVariable Long memberId, Member member) {
+    public Member putMember(@PathVariable Long memberId, Member member) {
         //리스트에서 해당 맴버 업데이트
 
-        return;
+        return member;
     }
 }
